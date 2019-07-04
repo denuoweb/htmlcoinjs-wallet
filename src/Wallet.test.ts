@@ -1,7 +1,7 @@
 import { assert } from "chai"
 
 import { networks, generateMnemonic, NetworkNames } from "./"
-import { generateBlock } from "./qtumRPC"
+import { generateBlock } from "./htmlcoinRPC"
 import { sleep } from "./time"
 import { params } from "./scrypt"
 
@@ -21,13 +21,13 @@ describe("Wallet", () => {
 
   it("recovers wallet from mnemonic", async () => {
     const wallet = await network.fromMnemonic(testMnemonic)
-    assert.equal(wallet.address, "qPVw7ZSjV8G2Xdr6rtxhR2riWf9SDkzDVo")
+    assert.equal(wallet.address, "hPVw7ZSjV8G2Xdr6rtxhR2riWf9SDkzDVo")
   })
 
   it("recovers wallet from mnemonic with password", async () => {
     const wallet = await network.fromMnemonic(testMnemonic, password)
 
-    assert.equal(wallet.address, "qJSUjMyHRZ4J1DmsCKd4R14cmb8CAWLZG8")
+    assert.equal(wallet.address, "hJSUjMyHRZ4J1DmsCKd4R14cmb8CAWLZG8")
   })
 
   const wifPrivateKey = "cMbgxCJrTYUqgcmiC1berh5DFrtY1KeU4PXZ6NZxgenniF1mXCRk"
@@ -35,7 +35,7 @@ describe("Wallet", () => {
   it("recovers wallet from WIF", () => {
     const wallet = network.fromWIF(wifPrivateKey)
 
-    assert.equal(wallet.address, "qUbxboqjBRp96j3La8D1RYkyqx5uQbJPoW")
+    assert.equal(wallet.address, "hUbxboqjBRp96j3La8D1RYkyqx5uQbJPoW")
   })
 
   it("recovers wallet from EncryptedPrivateKey", () => {
@@ -92,14 +92,14 @@ describe("Wallet", () => {
     const insight = network.insight()
     const wallet = network.fromWIF(wifPrivateKey)
 
-    const toAddress = "qLn9vqbr2Gx3TsVR9QyTVB5mrMoh4x43Uf"
-    const amount = 1e8 // 1 qtum (in sat)
+    const toAddress = "hLn9vqbr2Gx3TsVR9QyTVB5mrMoh4x43Uf"
+    const amount = 1e8 // 1 htmlcoin (in sat)
 
     const senderOldInfo = await insight.getInfo(wallet.address)
     const receiverOldInfo = await insight.getInfo(toAddress)
 
     const tx = await wallet.send(toAddress, amount, {
-      feeRate: 4000, // 0.04 qtum / KB
+      feeRate: 4000, // 0.04 htmlcoin / KB
     })
     assert.isNotEmpty(tx.txid)
 
