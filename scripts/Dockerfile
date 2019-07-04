@@ -1,3 +1,3 @@
-FROM dcb9/qtum-insightapi
+FROM dcb9/htmlcoin-insightapi
 
 COPY init-accounts.sh /usr/local/bin/
