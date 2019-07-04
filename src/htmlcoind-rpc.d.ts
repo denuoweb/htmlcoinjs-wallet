@@ -1,4 +1,4 @@
-declare module "qtumd-rpc" {
+declare module "htmlcoind-rpc" {
     export interface IConfig {
         protocol?: string
         user?: string
