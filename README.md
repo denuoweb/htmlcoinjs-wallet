@@ -201,7 +201,7 @@ Alias for `fromWIF`.
 Suppose you want to import the public address `hg3HYD8c4bAVLeEzA9t3Ken3Y3Mni1HZSS`. Use `htmlcoin-cli` to dump the private key from wallet:
 
 ```
-htmlcoin-cli dumpprivkey hg3HYD8c4bAVLeEzA9t3Ken3Y3Mni1HZSS
+hcli dumpprivkey hg3HYD8c4bAVLeEzA9t3Ken3Y3Mni1HZSS
 
 cVHzWuEKUxoRKba9ySZFqUKZ9G5W8NkzthRcPaB65amUJs95RM3d
 ```
