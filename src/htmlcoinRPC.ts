@@ -27,10 +27,3 @@ export const rpcClient = new HtmlcoinRPC({
   port: "18332",
   protocol: "http",
 })
-
-export async function generateBlock(network: Network) {
-  // generate a block after creating contract
-  if (network.info.name === NetworkNames.REGTEST) {
-    await rpcClient.generate(1)
-  }
-}
