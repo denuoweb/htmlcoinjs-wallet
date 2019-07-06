@@ -30,8 +30,8 @@ export interface INetworkInfo {
 export const networksInfo: { [key: string]: INetworkInfo } = {
   [NetworkNames.MAINNET]: {
     name: NetworkNames.MAINNET,
-    messagePrefix: "\u0019HTMLCOIN Signed Message:\n",
-    bech32: "bc",
+    messagePrefix: "\u0015HTMLCOIN Signed Message:\n",
+    bech32: "hc",
     bip32: { public: 76067358, private: 76066276 },
     pubKeyHash: 41,
     scriptHash: 100,
@@ -39,8 +39,17 @@ export const networksInfo: { [key: string]: INetworkInfo } = {
   },
   [NetworkNames.TESTNET]: {
     name: NetworkNames.TESTNET,
-    messagePrefix: "\u0019HTMLCOIN Signed Message:\n",
-    bech32: "tb",
+    messagePrefix: "\u0015HTMLCOIN Signed Message:\n",
+    bech32: "th",
+    bip32: { public: 70617039, private: 70615956 },
+    pubKeyHash: 100,
+    scriptHash: 110,
+    wif: 239,
+  },
+    [NetworkNames.REGTEST]: {
+    name: NetworkNames.REGTEST,
+    messagePrefix: "\u0015HTMLCOIN Signed Message:\n",
+    bech32: "th",
     bip32: { public: 70617039, private: 70615956 },
     pubKeyHash: 100,
     scriptHash: 110,
@@ -146,8 +155,10 @@ export class Network {
 
 const mainnet = new Network(networksInfo[NetworkNames.MAINNET])
 const testnet = new Network(networksInfo[NetworkNames.TESTNET])
+const regtest = new Network(networksInfo[NetworkNames.REGTEST])
 
 export const networks = {
   mainnet,
   testnet,
+  regtest,
 }
