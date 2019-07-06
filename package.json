@@ -43,7 +43,7 @@
     "coinselect": "^3.1.11",
     "hash.js": "^1.1.5",
     "htmlcoind-rpc": "^0.0.5",
-    "htmlcoinjs-lib": "^0.1.9",
+    "htmlcoinjs-lib": "^0.1.10",
     "safe-buffer": "^5.1.1",
     "scryptsy": "^2.0.0",
     "secp256k1": "^3.5.0",
