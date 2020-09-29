@@ -4,9 +4,9 @@ import { INetworkInfo } from "./Network"
 import { NetworkNames } from "./constants"
 
 const INSIGHT_BASEURLS: { [key: string]: string } = {
-  [NetworkNames.MAINNET]: "https://explorer.htmlcoin.com/api",
+  [NetworkNames.MAINNET]: "https://mobileapi.htmlcoin.com/",
   [NetworkNames.TESTNET]: "https://testnet.htmlcoin.com/api",
-  [NetworkNames.REGTEST]: "http://localhost:3001/api",
+  [NetworkNames.REGTEST]: "http://127.0.0.1:8000/htmlcoin-api/",
 }
 
 export class Insight {
